@@ -13,7 +13,7 @@
 #$Filename = Get-Date -Format "MM-dd-yyyy-hhmmsstt" 
 $Filename = "CPIFM-BLS.csv"
 #Add-Content -Path $Filename  -Value "SYMB,MM/DD/YY,NAV"
-New-Item -Path $Filename -ItemType "File" -Value "SYMB,MM/DD/YY,NAV"
+New-Item -Path $Filename -ItemType "File" -Value "SYMB,MM/DD/YY,NAV" -Force
 
 # BLS Website for v1 API
 $uri = 'https://api.bls.gov/publicAPI/v1/timeseries/data/'  
