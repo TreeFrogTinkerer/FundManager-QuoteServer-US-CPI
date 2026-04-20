@@ -1,5 +1,5 @@
 # FundManager US CPI Quote Server
-This is a script that downloads, parses, and formats the following CPI Series from the U.S. Bureau of Labor Statistics website using API v1
+This is a script that downloads, parses, and formats the following CPI Series from the U.S. Bureau of Labor Statistics website using API v1. The script on github will regerate the CPI data on the 20th of each month.
 
 * CUUR0000SA0 - CPI for All Urban Consumers (CPI-U) 1982-84=100 (Unadjusted)
 * CUUR0000AA0 - CPI for All Urban Consumers (CPI-U) 1967=100 (Unadjusted)
