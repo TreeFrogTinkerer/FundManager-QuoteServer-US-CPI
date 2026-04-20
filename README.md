@@ -12,4 +12,4 @@ You can either download the ps1 file locally
 
 or
 
-Download the CPIFM-BLS.csv and set it as your <local server> file
+Download the CPIFM-BLS.csv and set it as your `<local server`> file
