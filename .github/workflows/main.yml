@@ -1,0 +1,36 @@
+name: PowerShell Run and Publish
+on: 
+  schedule:
+    # Runs at 00:00 UTC every May and Nov 4st
+    - cron: '0 0 20 * *' 
+  workflow_dispatch:
+    # Optional: add inputs that you can fill in when running manually
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+
+jobs:
+  run-and-upload:
+    runs-on: ubuntu-latest
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Run PowerShell Script
+        shell: pwsh
+        run: |
+          # Example script that creates a result file
+          ./CPI-DLv3-ServerSide.ps1
+          # Or direct command:
+          #"Result data" | Out-File -FilePath "results.txt"
+
+      - uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "Auto-publish Price File"
+          file_pattern: '*.csv' # Specify your file path
